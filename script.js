@@ -1,19 +1,26 @@
-
 const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const currentDate = new Date();
 const currentDay = daysOfWeek[currentDate.getUTCDay()];
-const hours = currentDate.getHours();
-const minutes = currentDate.getMinutes();
-const seconds = currentDate.getSeconds();
+const currentUTCTime = currentDate.getTime();
 
-const currentUTCTime = `${hours}:${minutes}:${seconds}`
-// const currentUTCTime = currentDate.toUTCString();
 
+const userName = document.querySelector('[data-testid = "slackUserName"]');
+const profilePicture = document.querySelector('[data-testid = "slackDisplayImage"]');
+const track = document.querySelector('[data-testid = "myTrack"]');
 const gitHubLink = document.querySelector('[data-testid = "githubURL"]');
 const today = document.querySelector('[data-testid="currentDayOfTheWeek"]');
 const currentTime = document.querySelector('[data-testid="currentUTCTime"]');
 
+
+
+const myName = "Akanbi Diekola";
+const myTrack = "Frontend";
 const myGitHubLink = "https://github.com/diekolaakanbi/firstzuri";
+
+userName.textContent = `Slack Name: ${myName}`;
+profilePicture.setAttribute("src", "ZURI.png");
+profilePicture.setAttribute("alt", myName);
+track.textContent = `Track: ${myTrack}`;
 gitHubLink.setAttribute("href", myGitHubLink);
 today.textContent = `Current Day: ${currentDay}`;
 currentTime.textContent = `Current UTC Time: ${currentUTCTime}`;
